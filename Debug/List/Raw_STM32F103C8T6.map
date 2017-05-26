@@ -1,0 +1,192 @@
+###############################################################################
+#
+# IAR ELF Linker V8.11.1.13263/W32 for ARM                26/May/2017  20:57:58
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Exe\Raw_STM32F103C8T6.out
+#    Map file     =  
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\List\Raw_STM32F103C8T6.map
+#    Command line =  
+#        -f C:\Users\MRYBAL~1\AppData\Local\Temp\EWCEB8.tmp
+#        (C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Obj\main.o
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Obj\STM32F103C8T6_core.o
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Obj\STM32F103C8T6_registers.o
+#        -o
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Exe\Raw_STM32F103C8T6.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\List\Raw_STM32F103C8T6.map
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\config\linker\ST\stm32f103x8.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0800ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20004fff] { rw, block CSTACK, block HEAP };
+
+  Section          Kind        Address   Size  Object
+  -------          ----        -------   ----  ------
+"A0":                                    0x40
+  .intvec          ro code  0x08000000   0x40  vector_table_M.o [4]
+                          - 0x08000040   0x40
+
+"P1":                                   0x120
+  .text            ro code  0x08000040   0x40  zero_init3.o [4]
+  .text            ro code  0x08000080   0x3c  STM32F103C8T6_registers.o [1]
+  .text            ro code  0x080000bc   0x28  data_init.o [4]
+  .iar.init_table  const    0x080000e4   0x10  - Linker created -
+  .text            ro code  0x080000f4   0x1a  cmain.o [4]
+  .text            ro code  0x0800010e    0x4  low_level_init.o [3]
+  .text            ro code  0x08000112   0x18  STM32F103C8T6_core.o [1]
+  .text            ro code  0x0800012a    0x4  exit.o [3]
+  .text            ro code  0x0800012e    0x4  main.o [1]
+  .text            ro code  0x08000132    0x2  vector_table_M.o [4]
+  .text            ro code  0x08000134    0xa  cexit.o [4]
+  .text            ro code  0x08000140   0x14  exit.o [5]
+  .text            ro code  0x08000154    0xc  cstartup_M.o [4]
+  .rodata          const    0x08000160    0x0  zero_init3.o [4]
+                          - 0x08000160  0x120
+
+"P2", part 1 of 2:                       0x10
+  .bss             zero     0x20000000    0x4  STM32F103C8T6_registers.o [1]
+  .bss             zero     0x20000004    0x4  STM32F103C8T6_registers.o [1]
+  .bss             zero     0x20000008    0x4  STM32F103C8T6_registers.o [1]
+  .bss             zero     0x2000000c    0x4  STM32F103C8T6_registers.o [1]
+                          - 0x20000010   0x10
+
+"P2", part 2 of 2:                      0x800
+  CSTACK                    0x20000010  0x800  <Block>
+    CSTACK         uninit   0x20000010  0x800  <Block tail>
+                          - 0x20000810  0x800
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x10:
+          0x20000000  0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                     ro code  ro data  rw data
+    ------                     -------  -------  -------
+C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Obj: [1]
+    STM32F103C8T6_core.o            24
+    STM32F103C8T6_registers.o       60                16
+    main.o                           4
+    ----------------------------------------------------
+    Total:                          88                16
+
+command line: [2]
+    ----------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                           4
+    low_level_init.o                 4
+    ----------------------------------------------------
+    Total:                           8
+
+rt7M_tl.a: [4]
+    cexit.o                         10
+    cmain.o                         26
+    cstartup_M.o                    12
+    data_init.o                     40
+    vector_table_M.o                66
+    zero_init3.o                    64
+    ----------------------------------------------------
+    Total:                         218
+
+shb_l.a: [5]
+    exit.o                          20
+    ----------------------------------------------------
+    Total:                          20
+
+    Gaps                             2
+    Linker created                           16    2 048
+--------------------------------------------------------
+    Grand Total:                   336       16    2 064
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address  Size  Type      Object
+-----                      -------  ----  ----      ------
+.iar.init_table$$Base   0x080000e4         --   Gb  - Linker created -
+.iar.init_table$$Limit  0x080000f4         --   Gb  - Linker created -
+?main                   0x080000f5        Code  Gb  cmain.o [4]
+CSTACK$$Base            0x20000010         --   Gb  - Linker created -
+CSTACK$$Limit           0x20000810         --   Gb  - Linker created -
+Region$$Table$$Base     0x080000e4         --   Gb  - Linker created -
+Region$$Table$$Limit    0x080000f4         --   Gb  - Linker created -
+__cmain                 0x080000f5        Code  Gb  cmain.o [4]
+__exit                  0x08000141  0x14  Code  Gb  exit.o [5]
+__iar_data_init3        0x080000bd  0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x08000155        Code  Gb  cstartup_M.o [4]
+__iar_systems$$module {Abs}
+                        0x00000001        Data  Gb  command line/config [2]
+__iar_zero_init3        0x08000041  0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x0800010f   0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000        Data  Gb  vector_table_M.o [4]
+_call_main              0x08000101        Code  Gb  cmain.o [4]
+_exit                   0x08000135        Code  Gb  cexit.o [4]
+_main                   0x0800010b        Code  Gb  cmain.o [4]
+afio                    0x2000000c   0x4  Data  Lc  STM32F103C8T6_registers.o [1]
+exit                    0x0800012b   0x4  Code  Gb  exit.o [3]
+gpio_A                  0x20000000   0x4  Data  Lc  STM32F103C8T6_registers.o [1]
+gpio_B                  0x20000004   0x4  Data  Lc  STM32F103C8T6_registers.o [1]
+gpio_C                  0x20000008   0x4  Data  Lc  STM32F103C8T6_registers.o [1]
+initialize_board        0x08000113   0x8  Code  Lc  STM32F103C8T6_core.o [1]
+loop                    0x08000131   0x2  Code  Gb  main.o [1]
+main                    0x0800011b  0x10  Code  Gb  STM32F103C8T6_core.o [1]
+registers_init          0x08000081  0x3c  Code  Gb  STM32F103C8T6_registers.o [1]
+setup                   0x0800012f   0x2  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\MRybalsky\Documents\IAR_Projects\Raw_STM32F103C8T6\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+    336 bytes of readonly  code memory
+     16 bytes of readonly  data memory
+  2 064 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
